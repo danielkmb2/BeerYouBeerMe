@@ -8,6 +8,10 @@ public class EndGameController : MonoBehaviour {
 	public string antonioPrefabName = "Antonio";
 	public string taiboPrefabName = "Taibo";
 
+	public KeyCode quitKey = KeyCode.Escape;
+	public KeyCode startKey = KeyCode.Return;
+	public string gameLevelName = "Game";
+
 	void Awake () {
 
 		GameObject winScreen = null;
@@ -25,6 +29,11 @@ public class EndGameController : MonoBehaviour {
 	}
 	
 	void Update () {
-		
+		if (Input.GetKeyDown(quitKey)) {
+			Application.Quit();
+		}
+		if (Input.GetKeyDown(startKey)) {
+			UnityEngine.SceneManagement.SceneManager.LoadScene(gameLevelName);
+		}
 	}
 }
