@@ -25,9 +25,8 @@ public class BeerSpawn : MonoBehaviour {
 
 			Vector2 randomPositionInBounds = GetRandomPosition();
 			Quaternion randomZRotation = GetRandomZRotation();
-			;
 
-			GameObject newBeer = (GameObject)Instantiate(beerPrefab, randomPositionInBounds, randomZRotation);
+			Instantiate(beerPrefab, randomPositionInBounds, randomZRotation);
 
 			lastSpawnTime = Time.time;
 		}
